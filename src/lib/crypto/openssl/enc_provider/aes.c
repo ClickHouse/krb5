@@ -33,7 +33,7 @@
 #include <openssl/core_names.h>
 #else
 #include <openssl/aes.h>
-#include <openssl/modes.h>
+//#include <openssl/modes.h>
 #endif
 
 /* proto's */
@@ -132,7 +132,6 @@ cbc_decr(krb5_key key, const krb5_data *ivec, krb5_crypto_iov *data,
     zap(oblock, BLOCK_SIZE);
     return (ret == 1) ? 0 : KRB5_CRYPTO_INTERNAL;
 }
-
 
 /** The CTS mode is not implemented in BoringSSL.
   * So, copy the implementation from OpenSSL here.
@@ -338,6 +337,7 @@ size_t CRYPTO_cts128_decrypt_block(const unsigned char *in,
 
     return 16 + len + residue;
 }
+
 
 #if OPENSSL_VERSION_NUMBER >= 0x30000000L
 

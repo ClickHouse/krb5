@@ -32,7 +32,6 @@
 
 #include <k5-int.h>
 
-#if defined(CRYPTO_OPENSSL)
 
 #include <openssl/opensslv.h>
 #if OPENSSL_VERSION_NUMBER >= 0x30000000L
@@ -70,23 +69,6 @@
 #define K5_OPENSSL_SHA1
 #define K5_OPENSSL_SHA2
 
-#else
-
-#define K5_BUILTIN_AES
-#define K5_BUILTIN_CAMELLIA
-#define K5_BUILTIN_CMAC
-#define K5_BUILTIN_DES
-#define K5_BUILTIN_DES_KEY_PARITY
-#define K5_BUILTIN_HMAC
-#define K5_BUILTIN_KDF
-#define K5_BUILTIN_MD4
-#define K5_BUILTIN_MD5
-#define K5_BUILTIN_PBKDF2
-#define K5_BUILTIN_RC4
-#define K5_BUILTIN_SHA1
-#define K5_BUILTIN_SHA2
-
-#endif
 
 /* Enc providers and hash providers specify well-known ciphers and hashes to be
  * implemented by the crypto module. */
@@ -527,8 +509,8 @@ krb5_error_code krb5int_pbkdf2_hmac(const struct krb5_hash_provider *hash,
  */
 krb5_error_code
 k5_sp800_108_counter_hmac(const struct krb5_hash_provider *hash,
-                          krb5_key key, const krb5_data *label,
-                          const krb5_data *context, krb5_data *rnd_out);
+                          krb5_key inkey, krb5_data *outrnd,
+                          const krb5_data *label, const krb5_data *context);
 
 /*
  * Compute the NIST SP800-108 KDF in feedback mode (section 5.2) with the

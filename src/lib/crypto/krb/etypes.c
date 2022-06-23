@@ -35,7 +35,6 @@
 
 /* Deprecations come from RFC 6649 and RFC 8249. */
 const struct krb5_keytypes krb5int_enctypes_list[] = {
-
     { ENCTYPE_DES3_CBC_RAW,
       "des3-cbc-raw", { 0 }, "Triple DES cbc mode raw",
       &krb5int_enc_des3, NULL,
