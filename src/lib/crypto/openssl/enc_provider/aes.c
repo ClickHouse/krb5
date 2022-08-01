@@ -33,7 +33,7 @@
 #include <openssl/core_names.h>
 #else
 #include <openssl/aes.h>
-//#include <openssl/modes.h>
+#include <openssl/modes.h>
 #endif
 
 /* proto's */
