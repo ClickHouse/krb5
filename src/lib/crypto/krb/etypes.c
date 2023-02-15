@@ -35,7 +35,6 @@
 
 /* Deprecations come from RFC 6649 and RFC 8249. */
 const struct krb5_keytypes krb5int_enctypes_list[] = {
-
     { ENCTYPE_DES3_CBC_RAW,
       "des3-cbc-raw", { 0 }, "Triple DES cbc mode raw",
       &krb5int_enc_des3, NULL,
@@ -103,6 +102,7 @@ const struct krb5_keytypes krb5int_enctypes_list[] = {
       krb5int_dk_prf,
       CKSUMTYPE_HMAC_SHA1_96_AES256,
       0 /*flags*/, 256 },
+
 #if 0
     { ENCTYPE_CAMELLIA128_CTS_CMAC,
       "camellia128-cts-cmac", { "camellia128-cts" },
@@ -126,7 +126,7 @@ const struct krb5_keytypes krb5int_enctypes_list[] = {
       krb5int_dk_cmac_prf,
       CKSUMTYPE_CMAC_CAMELLIA256,
       0 /*flags */, 256 },
-#endif
+
     { ENCTYPE_AES128_CTS_HMAC_SHA256_128,
       "aes128-cts-hmac-sha256-128", { "aes128-sha2" },
       "AES-128 CTS mode with 128-bit SHA-256 HMAC",
@@ -147,6 +147,7 @@ const struct krb5_keytypes krb5int_enctypes_list[] = {
       krb5int_aes2_prf,
       CKSUMTYPE_HMAC_SHA384_192_AES256,
       0 /*flags*/, 256 },
+#endif
 };
 
 const int krb5int_enctypes_length =

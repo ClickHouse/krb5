@@ -30,7 +30,7 @@ fi
 ROOT=`echo $1 | sed -e s/.et$//`
 BASE=`echo "$ROOT" | sed -e 's;.*/;;'`
 
-set -e
+set -ex
 $AWK -f ${DIR}/et_h.awk "outfile=${BASE}.h" "$ROOT.et"
 $AWK -f ${DIR}/et_c.awk "outfile=${BASE}.c" "textdomain=$TEXTDOMAIN" \
     "localedir=$LOCALEDIR" "$ROOT.et"

@@ -76,8 +76,11 @@ derive_keys(const struct krb5_keytypes *ktp, krb5_key key,
     ret = alloc_data(&ki, ktp->hash->hashsize / 2);
     if (ret)
         goto cleanup;
+#if 0
     ret = krb5int_derive_random(NULL, ktp->hash, key, &ki, &label_data,
                                 DERIVE_SP800_108_HMAC);
+#endif
+
     if (ret)
         goto cleanup;
 
