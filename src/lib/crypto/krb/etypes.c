@@ -126,6 +126,7 @@ const struct krb5_keytypes krb5int_enctypes_list[] = {
       krb5int_dk_cmac_prf,
       CKSUMTYPE_CMAC_CAMELLIA256,
       0 /*flags */, 256 },
+#endif
 
     { ENCTYPE_AES128_CTS_HMAC_SHA256_128,
       "aes128-cts-hmac-sha256-128", { "aes128-sha2" },
@@ -147,7 +148,6 @@ const struct krb5_keytypes krb5int_enctypes_list[] = {
       krb5int_aes2_prf,
       CKSUMTYPE_HMAC_SHA384_192_AES256,
       0 /*flags*/, 256 },
-#endif
 };
 
 const int krb5int_enctypes_length =

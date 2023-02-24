@@ -87,7 +87,6 @@ krb5int_derive_random(const struct krb5_enc_provider *enc,
     krb5_data empty = empty_data();
 
     switch (alg) {
-#if 0
     case DERIVE_RFC3961:
         return k5_derive_random_rfc3961(enc, inkey, in_constant, outrnd);
     case DERIVE_SP800_108_CMAC:
@@ -95,7 +94,6 @@ krb5int_derive_random(const struct krb5_enc_provider *enc,
     case DERIVE_SP800_108_HMAC:
         return k5_sp800_108_counter_hmac(hash, inkey, in_constant, &empty,
                                          outrnd);
-#endif
     default:
         return EINVAL;
     }
