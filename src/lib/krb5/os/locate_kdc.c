@@ -28,7 +28,7 @@
 #include "fake-addrinfo.h"
 #include "os-proto.h"
 
-#ifdef KRB5_DNS_LOOKUP
+// #ifdef KRB5_DNS_LOOKUP
 
 #define DEFAULT_LOOKUP_KDC 1
 #if KRB5_DNS_LOOKUP_REALM
@@ -114,7 +114,7 @@ get_sitename(krb5_context context, const krb5_data *realm, char **out)
     return ret;
 }
 
-#endif /* KRB5_DNS_LOOKUP */
+// #endif /* KRB5_DNS_LOOKUP */
 
 /* Free up everything pointed to by the serverlist structure, but don't
  * free the structure itself. */
